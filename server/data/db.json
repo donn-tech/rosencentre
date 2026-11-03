@@ -1,0 +1,448 @@
+{
+  "admin": {
+    "email": "admin@company.com",
+    "password": "admin",
+    "name": "Team Admin"
+  },
+  "authorizedEmails": [
+    {
+      "id": "auth-1",
+      "email": "alex@company.com",
+      "firstName": "Alex",
+      "role": "member",
+      "notes": "Customer Support",
+      "addedAt": "2026-11-03T08:05:06.651Z"
+    },
+    {
+      "id": "auth-2",
+      "email": "sarah@company.com",
+      "firstName": "Sarah",
+      "role": "member",
+      "notes": "Operations Team",
+      "addedAt": "2026-11-03T08:05:06.651Z"
+    },
+    {
+      "id": "auth-3",
+      "email": "michael@company.com",
+      "firstName": "Michael",
+      "role": "member",
+      "notes": "Front Desk",
+      "addedAt": "2026-11-03T08:05:06.651Z"
+    },
+    {
+      "id": "auth-4",
+      "email": "team@company.com",
+      "firstName": "Team Member",
+      "role": "member",
+      "notes": "General Staff",
+      "addedAt": "2026-11-03T08:05:06.651Z"
+    },
+    {
+      "id": "auth-b6e090a3-969d-40af-b85a-d9256a8fbba1",
+      "email": "newmember_1793693716830@company.com",
+      "firstName": "Newbie",
+      "role": "member",
+      "notes": "QA Testing",
+      "addedAt": "2026-11-03T08:15:16.831Z"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "quiz-c838abc0-39d7-4af3-90ce-ed86f7b10be0",
+      "title": "Customer Service & Hospitality Mastery 2026",
+      "description": "Comprehensive test of hospitality, etiquette, and conflict resolution.",
+      "category": "Hospitality",
+      "timeLimitMinutes": 15,
+      "passingScorePercentage": 75,
+      "status": "published",
+      "createdAt": "2026-11-03T08:15:16.837Z",
+      "updatedAt": "2026-11-03T08:15:16.839Z",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single_choice",
+          "prompt": "What is the optimal greeting time for arriving guests?",
+          "points": 10,
+          "explanation": "30 seconds is the industry benchmark for standard first impressions.",
+          "options": [
+            {
+              "id": "opt1",
+              "text": "Within 30 seconds"
+            },
+            {
+              "id": "opt2",
+              "text": "Within 5 minutes"
+            }
+          ],
+          "correctAnswer": "opt1",
+          "acceptedAnswers": []
+        },
+        {
+          "id": "q2",
+          "type": "true_false",
+          "prompt": "Eye contact is an essential component of active listening.",
+          "points": 10,
+          "explanation": "Non-verbal cues like eye contact convey empathy and attentiveness.",
+          "options": [
+            {
+              "id": "true",
+              "text": "True"
+            },
+            {
+              "id": "false",
+              "text": "False"
+            }
+          ],
+          "correctAnswer": "true",
+          "acceptedAnswers": []
+        },
+        {
+          "id": "q3",
+          "type": "short_answer",
+          "prompt": "Type the magic word in customer service: (starts with \"P\")",
+          "points": 10,
+          "explanation": "\"Please\" and \"Thank you\" are non-negotiable courtesy standards.",
+          "options": [],
+          "acceptedAnswers": [
+            "please",
+            "Please",
+            "PLEASE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quiz-1",
+      "title": "Company Core Values & Team Culture",
+      "description": "Test your understanding of our mission, guest service expectations, and workplace standards.",
+      "category": "Onboarding",
+      "timeLimitMinutes": 10,
+      "passingScorePercentage": 75,
+      "status": "published",
+      "createdAt": "2026-11-03T08:05:06.651Z",
+      "updatedAt": "2026-11-03T08:05:06.651Z",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single_choice",
+          "prompt": "What is our primary guiding principle when interacting with guests or teammates?",
+          "points": 10,
+          "explanation": "Respect, empathy, and active listening form the foundation of our hospitality standard.",
+          "options": [
+            {
+              "id": "opt_1",
+              "text": "Speed above all else, even if quality drops"
+            },
+            {
+              "id": "opt_2",
+              "text": "Deliver warmth, respect, and proactive assistance at every touchpoint"
+            },
+            {
+              "id": "opt_3",
+              "text": "Only assist when explicitly asked by management"
+            },
+            {
+              "id": "opt_4",
+              "text": "Minimize conversations to save time"
+            }
+          ],
+          "correctAnswer": "opt_2"
+        },
+        {
+          "id": "q2",
+          "type": "multiple_choice",
+          "prompt": "Which of the following actions reflect exceptional customer service? (Select all that apply)",
+          "points": 15,
+          "explanation": "Greeting warmly, active listening, and following through all contribute directly to exceptional guest satisfaction.",
+          "options": [
+            {
+              "id": "opt_1",
+              "text": "Smiling and greeting someone by name when known"
+            },
+            {
+              "id": "opt_2",
+              "text": "Actively listening without interrupting"
+            },
+            {
+              "id": "opt_3",
+              "text": "Escorting someone to their destination rather than just pointing"
+            },
+            {
+              "id": "opt_4",
+              "text": "Telling someone \"That is not my department\" and walking away"
+            }
+          ],
+          "correctAnswer": [
+            "opt_1",
+            "opt_2",
+            "opt_3"
+          ]
+        },
+        {
+          "id": "q3",
+          "type": "true_false",
+          "prompt": "It is acceptable to share internal guest or client personal details in public areas if speaking quietly.",
+          "points": 10,
+          "explanation": "Guest and client privacy is strictly confidential at all times and must never be discussed publicly.",
+          "options": [
+            {
+              "id": "true",
+              "text": "True"
+            },
+            {
+              "id": "false",
+              "text": "False"
+            }
+          ],
+          "correctAnswer": "false"
+        },
+        {
+          "id": "q4",
+          "type": "short_answer",
+          "prompt": "Fill in the blank: Our commitment is to deliver service with ______ and excellence. (Hint: starts with \"integrity\")",
+          "points": 15,
+          "explanation": "Integrity is a core pillar of our company philosophy.",
+          "acceptedAnswers": [
+            "integrity",
+            "Integrity",
+            "INTEGRITY"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quiz-2",
+      "title": "Workplace Safety & Emergency Preparedness",
+      "description": "Critical knowledge for emergency situations, fire exits, and safety regulations.",
+      "category": "Safety",
+      "timeLimitMinutes": 12,
+      "passingScorePercentage": 80,
+      "status": "published",
+      "createdAt": "2026-11-03T08:05:06.651Z",
+      "updatedAt": "2026-11-03T08:05:06.651Z",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single_choice",
+          "prompt": "In the event of a fire alarm, what should your first action be?",
+          "points": 10,
+          "explanation": "Evacuate immediately via designated stairs and emergency exits without using elevators.",
+          "options": [
+            {
+              "id": "opt_1",
+              "text": "Take the nearest elevator to the ground floor"
+            },
+            {
+              "id": "opt_2",
+              "text": "Evacuate calmly via marked emergency stairs to the assembly point"
+            },
+            {
+              "id": "opt_3",
+              "text": "Collect all personal belongings and laptops before moving"
+            },
+            {
+              "id": "opt_4",
+              "text": "Stay in your office until someone knocks on your door"
+            }
+          ],
+          "correctAnswer": "opt_2"
+        },
+        {
+          "id": "q2",
+          "type": "true_false",
+          "prompt": "Emergency exit doors must remain clear and unblocked at all times, with no exceptions.",
+          "points": 10,
+          "explanation": "OSHA and building safety codes require exit pathways to be completely unobstructed 24/7.",
+          "options": [
+            {
+              "id": "true",
+              "text": "True"
+            },
+            {
+              "id": "false",
+              "text": "False"
+            }
+          ],
+          "correctAnswer": "true"
+        },
+        {
+          "id": "q3",
+          "type": "multiple_choice",
+          "prompt": "Which of the following are recognized safety hazard signs you must report immediately? (Select all that apply)",
+          "points": 15,
+          "explanation": "Spills, frayed cords, and blocked exits are clear hazards that require immediate intervention.",
+          "options": [
+            {
+              "id": "opt_1",
+              "text": "Wet flooring without warning signage"
+            },
+            {
+              "id": "opt_2",
+              "text": "Frayed electrical cords or smoking equipment"
+            },
+            {
+              "id": "opt_3",
+              "text": "Blocked fire extinguisher stations"
+            },
+            {
+              "id": "opt_4",
+              "text": "Clean and organized storage shelves"
+            }
+          ],
+          "correctAnswer": [
+            "opt_1",
+            "opt_2",
+            "opt_3"
+          ]
+        },
+        {
+          "id": "q4",
+          "type": "short_answer",
+          "prompt": "What common 3-word safety term stands for PPE? (Personal ...)",
+          "points": 15,
+          "explanation": "PPE stands for Personal Protective Equipment.",
+          "acceptedAnswers": [
+            "personal protective equipment",
+            "Personal Protective Equipment",
+            "Personal protective equipment"
+          ]
+        }
+      ]
+    }
+  ],
+  "submissions": [
+    {
+      "id": "sub-621d6c8c-0d0e-4686-bdc0-ba04b9264a4f",
+      "quizId": "quiz-c838abc0-39d7-4af3-90ce-ed86f7b10be0",
+      "quizTitle": "Customer Service & Hospitality Mastery 2026",
+      "userEmail": "newmember_1793693716830@company.com",
+      "firstName": "Newbie",
+      "score": 30,
+      "maxScore": 30,
+      "percentage": 100,
+      "passed": true,
+      "passingScorePercentage": 75,
+      "timeSpentSeconds": 140,
+      "submittedAt": "2026-11-03T08:15:16.842Z",
+      "answers": {
+        "q1": {
+          "userAnswer": "opt1",
+          "correct": true,
+          "pointsAwarded": 10,
+          "maxPoints": 10,
+          "explanation": "30 seconds is the industry benchmark for standard first impressions.",
+          "correctAnswer": "opt1",
+          "acceptedAnswers": []
+        },
+        "q2": {
+          "userAnswer": "true",
+          "correct": true,
+          "pointsAwarded": 10,
+          "maxPoints": 10,
+          "explanation": "Non-verbal cues like eye contact convey empathy and attentiveness.",
+          "correctAnswer": "true",
+          "acceptedAnswers": []
+        },
+        "q3": {
+          "userAnswer": "Please",
+          "correct": true,
+          "pointsAwarded": 10,
+          "maxPoints": 10,
+          "explanation": "\"Please\" and \"Thank you\" are non-negotiable courtesy standards.",
+          "acceptedAnswers": [
+            "please",
+            "Please",
+            "PLEASE"
+          ]
+        }
+      }
+    },
+    {
+      "id": "sub-sample-1",
+      "quizId": "quiz-1",
+      "quizTitle": "Company Core Values & Team Culture",
+      "userEmail": "sarah@company.com",
+      "firstName": "Sarah",
+      "score": 50,
+      "maxScore": 50,
+      "percentage": 100,
+      "passed": true,
+      "passingScorePercentage": 75,
+      "timeSpentSeconds": 245,
+      "submittedAt": "2026-11-03T04:05:06.651Z",
+      "answers": {
+        "q1": {
+          "userAnswer": "opt_2",
+          "correct": true,
+          "pointsAwarded": 10,
+          "maxPoints": 10
+        },
+        "q2": {
+          "userAnswer": [
+            "opt_1",
+            "opt_2",
+            "opt_3"
+          ],
+          "correct": true,
+          "pointsAwarded": 15,
+          "maxPoints": 15
+        },
+        "q3": {
+          "userAnswer": "false",
+          "correct": true,
+          "pointsAwarded": 10,
+          "maxPoints": 10
+        },
+        "q4": {
+          "userAnswer": "Integrity",
+          "correct": true,
+          "pointsAwarded": 15,
+          "maxPoints": 15
+        }
+      }
+    },
+    {
+      "id": "sub-sample-2",
+      "quizId": "quiz-2",
+      "quizTitle": "Workplace Safety & Emergency Preparedness",
+      "userEmail": "alex@company.com",
+      "firstName": "Alex",
+      "score": 35,
+      "maxScore": 50,
+      "percentage": 70,
+      "passed": false,
+      "passingScorePercentage": 80,
+      "timeSpentSeconds": 310,
+      "submittedAt": "2026-11-03T06:05:06.651Z",
+      "answers": {
+        "q1": {
+          "userAnswer": "opt_2",
+          "correct": true,
+          "pointsAwarded": 10,
+          "maxPoints": 10
+        },
+        "q2": {
+          "userAnswer": "true",
+          "correct": true,
+          "pointsAwarded": 10,
+          "maxPoints": 10
+        },
+        "q3": {
+          "userAnswer": [
+            "opt_1",
+            "opt_2"
+          ],
+          "correct": false,
+          "pointsAwarded": 0,
+          "maxPoints": 15
+        },
+        "q4": {
+          "userAnswer": "Personal Protective Equipment",
+          "correct": true,
+          "pointsAwarded": 15,
+          "maxPoints": 15
+        }
+      }
+    }
+  ]
+}
