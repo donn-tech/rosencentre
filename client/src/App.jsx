@@ -14,12 +14,14 @@ import OverviewTab from './components/AdminDashboard/OverviewTab';
 import QuizzesTab from './components/AdminDashboard/QuizzesTab';
 import WhitelistTab from './components/AdminDashboard/WhitelistTab';
 import SubmissionsTab from './components/AdminDashboard/SubmissionsTab';
+import MusicTab from './components/AdminDashboard/MusicTab';
+import MusicPlayer from './components/MusicPlayer/MusicPlayer';
 
 export default function App() {
   const { user, isAdmin, isAuthenticated, loginMember } = useAuth();
 
   // Active navigation tab
-  // For Admin: 'overview' | 'quizzes' | 'whitelist' | 'submissions'
+  // For Admin: 'overview' | 'quizzes' | 'whitelist' | 'submissions' | 'music'
   // For Member: 'available' | 'history'
   const [activeTab, setActiveTab] = useState(isAdmin ? 'overview' : 'available');
 
@@ -163,6 +165,10 @@ export default function App() {
                   onClearInspect={() => setInspectedSub(null)}
                 />
               )}
+
+              {activeTab === 'music' && (
+                <MusicTab />
+              )}
             </>
           )
         ) : (
@@ -191,6 +197,9 @@ export default function App() {
           </>
         )}
       </main>
+
+      {/* Floating Global YouTube Music Player */}
+      <MusicPlayer />
 
       {/* Footer */}
       <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
+import { useMusic } from '../context/MusicContext';
 import { 
   CheckCircle2, 
   Shield, 
@@ -9,11 +10,14 @@ import {
   Users, 
   BarChart3, 
   FileCheck2, 
-  Layers
+  Layers,
+  Music,
+  Headphones
 } from 'lucide-react';
 
 export default function Navbar({ activeTab, setActiveTab, currentView, setCurrentView }) {
   const { user, isAdmin, logout } = useAuth();
+  const { isPlaying, setIsPlayerVisible, setIsExpanded } = useMusic();
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
@@ -86,6 +90,17 @@ export default function Navbar({ activeTab, setActiveTab, currentView, setCurren
                     <FileCheck2 className="w-4 h-4" />
                     <span>Submissions</span>
                   </button>
+                  <button
+                    onClick={() => setActiveTab('music')}
+                    className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                      activeTab === 'music'
+                        ? 'bg-brand-50 text-brand-700'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                    }`}
+                  >
+                    <Music className="w-4 h-4" />
+                    <span>Music Library</span>
+                  </button>
                 </>
               ) : (
                 <>
@@ -118,6 +133,28 @@ export default function Navbar({ activeTab, setActiveTab, currentView, setCurren
 
           {/* User Profile & Actions */}
           <div className="flex items-center space-x-3">
+            {/* Quick Music Player Toggle */}
+            <button
+              onClick={() => {
+                setIsPlayerVisible(true);
+                setIsExpanded((prev) => !prev);
+              }}
+              title="Toggle Music Player"
+              className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-full border text-xs font-semibold transition-all ${
+                isPlaying
+                  ? 'bg-indigo-50 border-indigo-200 text-indigo-700 shadow-sm'
+                  : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'
+              }`}
+            >
+              <Headphones className={`w-3.5 h-3.5 ${isPlaying ? 'text-indigo-600 animate-pulse' : 'text-slate-500'}`} />
+              <span className="hidden sm:inline">
+                {isPlaying ? 'Music On' : 'Music'}
+              </span>
+              {isPlaying && (
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+              )}
+            </button>
+
             {user ? (
               <div className="flex items-center space-x-3">
                 <div className="flex items-center space-x-2.5 bg-slate-100/80 px-3 py-1.5 rounded-full border border-slate-200">
@@ -189,6 +226,14 @@ export default function Navbar({ activeTab, setActiveTab, currentView, setCurren
                   }`}
                 >
                   Submissions
+                </button>
+                <button
+                  onClick={() => setActiveTab('music')}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap ${
+                    activeTab === 'music' ? 'bg-brand-50 text-brand-700' : 'text-slate-600'
+                  }`}
+                >
+                  Music Library
                 </button>
               </>
             ) : (

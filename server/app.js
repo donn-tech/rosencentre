@@ -10,6 +10,7 @@ const quizRoutes = require('./routes/quizzes');
 const submissionRoutes = require('./routes/submissions');
 const whitelistRoutes = require('./routes/whitelist');
 const statsRoutes = require('./routes/stats');
+const musicRoutes = require('./routes/music');
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.use('/api/quizzes', quizRoutes);
 app.use('/api/submissions', submissionRoutes);
 app.use('/api/whitelist', whitelistRoutes);
 app.use('/api/stats', statsRoutes);
+app.use('/api/music', musicRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

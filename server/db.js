@@ -256,6 +256,40 @@ const INITIAL_DATA = {
         }
       }
     }
+  ],
+  tracks: [
+    {
+      id: 'track-1',
+      title: 'Lofi Hip Hop Radio - Beats to Relax/Study to',
+      url: 'https://www.youtube.com/watch?v=jfKfPfyJRdk',
+      youtubeId: 'jfKfPfyJRdk',
+      category: 'Lofi Focus',
+      addedAt: new Date().toISOString()
+    },
+    {
+      id: 'track-2',
+      title: 'Peaceful Piano Radio - Relaxing Music for Study & Work',
+      url: 'https://www.youtube.com/watch?v=4xDzrJKXOOY',
+      youtubeId: '4xDzrJKXOOY',
+      category: 'Classical Piano',
+      addedAt: new Date().toISOString()
+    },
+    {
+      id: 'track-3',
+      title: 'Coffee Shop Lofi Chillout Radio',
+      url: 'https://www.youtube.com/watch?v=WPni755-Krg',
+      youtubeId: 'WPni755-Krg',
+      category: 'Coffee Shop',
+      addedAt: new Date().toISOString()
+    },
+    {
+      id: 'track-4',
+      title: 'Synthwave / Chillwave Retro Beats',
+      url: 'https://www.youtube.com/watch?v=TURbeWK2wwg',
+      youtubeId: 'TURbeWK2wwg',
+      category: 'Electronic & Synth',
+      addedAt: new Date().toISOString()
+    }
   ]
 };
 
@@ -287,6 +321,9 @@ function readDb() {
     }
     const data = fs.readFileSync(DB_FILE, 'utf-8');
     const parsed = JSON.parse(data);
+    if (!parsed.tracks) {
+      parsed.tracks = INITIAL_DATA.tracks || [];
+    }
     inMemoryCache = parsed;
     return parsed;
   } catch (err) {
@@ -620,6 +657,64 @@ const db = {
       };
     }
     return { success: false, message: 'Invalid admin credentials' };
+  },
+
+  // Track / Music methods
+  getTracks: () => {
+    const data = readDb();
+    return data.tracks || [];
+  },
+
+  getTrackById: (id) => {
+    const data = readDb();
+    return (data.tracks || []).find((t) => t.id === id);
+  },
+
+  addTrack: ({ title, url, youtubeId, category }) => {
+    const data = readDb();
+    if (!data.tracks) {
+      data.tracks = [];
+    }
+
+    const newTrack = {
+      id: 'track-' + crypto.randomUUID(),
+      title: (title || 'YouTube Track').trim(),
+      url: (url || '').trim(),
+      youtubeId: (youtubeId || '').trim(),
+      category: (category || 'Study & Focus').trim(),
+      addedAt: new Date().toISOString()
+    };
+
+    data.tracks.unshift(newTrack);
+    writeDb(data);
+    return newTrack;
+  },
+
+  updateTrack: (id, updates) => {
+    const data = readDb();
+    if (!data.tracks) data.tracks = [];
+    const index = data.tracks.findIndex((t) => t.id === id);
+    if (index === -1) return null;
+
+    data.tracks[index] = {
+      ...data.tracks[index],
+      ...updates,
+      id // preserve original id
+    };
+    writeDb(data);
+    return data.tracks[index];
+  },
+
+  deleteTrack: (id) => {
+    const data = readDb();
+    if (!data.tracks) data.tracks = [];
+    const initialLen = data.tracks.length;
+    data.tracks = data.tracks.filter((t) => t.id !== id);
+    if (data.tracks.length !== initialLen) {
+      writeDb(data);
+      return true;
+    }
+    return false;
   }
 };
 

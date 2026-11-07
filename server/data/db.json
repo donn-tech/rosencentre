@@ -444,5 +444,39 @@
         }
       }
     }
+  ],
+  "tracks": [
+    {
+      "id": "track-1",
+      "title": "Lofi Hip Hop Radio - Beats to Relax/Study to",
+      "url": "https://www.youtube.com/watch?v=jfKfPfyJRdk",
+      "youtubeId": "jfKfPfyJRdk",
+      "category": "Lofi Focus",
+      "addedAt": "2026-11-06T12:00:00.000Z"
+    },
+    {
+      "id": "track-2",
+      "title": "Peaceful Piano Radio - Relaxing Music for Study & Work",
+      "url": "https://www.youtube.com/watch?v=4xDzrJKXOOY",
+      "youtubeId": "4xDzrJKXOOY",
+      "category": "Classical Piano",
+      "addedAt": "2026-11-06T12:00:00.000Z"
+    },
+    {
+      "id": "track-3",
+      "title": "Coffee Shop Lofi Chillout Radio",
+      "url": "https://www.youtube.com/watch?v=WPni755-Krg",
+      "youtubeId": "WPni755-Krg",
+      "category": "Coffee Shop",
+      "addedAt": "2026-11-06T12:00:00.000Z"
+    },
+    {
+      "id": "track-4",
+      "title": "Synthwave / Chillwave Retro Beats",
+      "url": "https://www.youtube.com/watch?v=TURbeWK2wwg",
+      "youtubeId": "TURbeWK2wwg",
+      "category": "Electronic & Synth",
+      "addedAt": "2026-11-06T12:00:00.000Z"
+    }
   ]
 }
